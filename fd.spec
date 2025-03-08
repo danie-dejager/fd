@@ -1,6 +1,6 @@
 %define name fd
 %define version 10.2.0
-%define release 1%{?dist}
+%define release 2%{?dist}
 
 Summary:  A simple, fast and user-friendly alternative to 'find' 
 Name:     %{name}
@@ -30,12 +30,19 @@ export PATH="$PATH:$HOME/.cargo/bin"
 cargo build --release --locked
 strip --strip-all target/release/%{name}
 mkdir -p %{buildroot}/%{_bindir}
+gzip doc/fd.1
 
 %install
 mkdir -p %{buildroot}/%{_bindir}/
+mkdir -p %{buildroot}%{_mandir}/man1/
+mkdir -p %{buildroot}/%{_sysconfdir}/zsh/site-functions/
 
-install -m 755 target/release/fd %{buildroot}/%{_bindir}/
+install -Dpm 0644 doc/%{name}.1.gz -t %{buildroot}%{_mandir}/man1/
+install -m 755 target/release/%{name} %{buildroot}/%{_bindir}/
+install -Dpm 0644 contrib/completion/_%{name} -t %{buildroot}/%{_sysconfdir}/zsh/site-functions/
 
 %files
 %doc README.md
-%{_bindir}/fd
+%{_bindir}/%{name}
+%{_sysconfdir}/zsh/site-functions/_%{name}
+%{_mandir}/man1/%{name}.1.gz
