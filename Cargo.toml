@@ -5,6 +5,7 @@ categories = ["command-line-utilities"]
 description = "fd is a simple, fast and user-friendly alternative to find."
 exclude = ["/benchmarks/*"]
 homepage = "https://github.com/sharkdp/fd"
+documentation = "https://docs.rs/fd-find"
 keywords = [
     "search",
     "find",
@@ -46,12 +47,12 @@ anyhow = "1.0"
 etcetera = "0.9"
 normpath = "1.1.1"
 crossbeam-channel = "0.5.14"
-clap_complete = {version = "4.5.44", optional = true}
+clap_complete = {version = "4.5.47", optional = true}
 faccess = "0.2.4"
-jiff = "0.2.4"
+jiff = "0.2.5"
 
 [dependencies.clap]
-version = "4.5.31"
+version = "4.5.35"
 features = ["suggestions", "color", "wrap_help", "cargo", "derive"]
 
 [dependencies.lscolors]
@@ -73,7 +74,7 @@ jemallocator = {version = "0.5.4", optional = true}
 
 [dev-dependencies]
 diff = "0.1"
-tempfile = "3.16"
+tempfile = "3.19"
 filetime = "0.2"
 test-case = "3.3"
 
