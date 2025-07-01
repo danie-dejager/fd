@@ -1,6 +1,6 @@
 %define name fd
 %define version 10.2.0
-%define release 3%{?dist}
+%define release 4%{?dist}
 
 Summary:  A simple, fast and user-friendly alternative to 'find' 
 Name:     %{name}
