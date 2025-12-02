@@ -11,6 +11,7 @@ URL:      https://github.com/sharkdp/fd
 Source0:  https://github.com/sharkdp/fd/archive/refs/tags/v%{version}.tar.gz
 
 %define debug_package %{nil}
+%undefine _package_note_file
 
 BuildRequires: curl
 BuildRequires: gcc
