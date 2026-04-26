@@ -5,6 +5,7 @@
 
 ## Bugfixes
 - Handle invalid working directories gracefully when using `--full-path`, see #1900 (@Xavrir).
+- Fire the "search pattern contains a path separator" diagnostic for any pattern containing `/`, not just patterns that happen to name an existing directory. Preserves the legacy Windows behaviour that also flags native `\` separators when the pattern resolves to a real directory. See #1873.
 
 # 10.4.2
 
@@ -31,6 +32,8 @@ This is just a re-release of 10.4.0 due to an issue with the 10.4.0 release.
     - #1506
     - #1667
     - #1813
+
+- Fix completions for alias `fdfind` in deb release, see #1888 (@skane-lukas)
 
 ## Changes
 
