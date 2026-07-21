@@ -212,7 +212,7 @@ See below for more details on the placeholder syntax.
 The terminal output of commands run from parallel threads using `-x` will not be interlaced or garbled,
 so `fd -x` can be used to rudimentarily parallelize a task run over many files.
 An example of this is calculating the checksum of each individual file within a directory.
-```
+``` bash
 fd -tf -x md5sum > file_checksums.txt
 ```
 
@@ -328,7 +328,7 @@ Options:
   -t, --type <filetype>            Filter by type: file (f), directory (d/dir), symlink (l),
                                    executable (x), empty (e), socket (s), pipe (p), char-device
                                    (c), block-device (b)
-  -e, --extension <ext>            Filter by file extension
+  -e, --extension <ext>            Filter by extension
   -S, --size <size>                Limit results based on the size of files
       --changed-within <date|dur>  Filter by file modification time (newer than)
       --changed-before <date|dur>  Filter by file modification time (older than)
@@ -349,7 +349,7 @@ Note that options can be given after the pattern and/or path as well.
 
 ## Benchmark
 
-Let's search my home folder for files that end in `[0-9].jpg`. It contains ~750.000
+Let's search my home folder for files that end in `[0-9].jpg`. It contains ~750,000
 subdirectories and about a 4 million files. For averaging and statistical analysis, I'm using
 [hyperfine](https://github.com/sharkdp/hyperfine). The following benchmarks are performed
 with a "warm"/pre-filled disk-cache (results for a "cold" disk-cache show the same trends).
@@ -723,7 +723,7 @@ With Rust's package manager [cargo](https://github.com/rust-lang/cargo), you can
 ```
 cargo install fd-find
 ```
-Note that rust version *1.77.2* or later is required.
+Note that rust version *1.90.0* or later is required.
 
 `make` is also needed for the build.
 
