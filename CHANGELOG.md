@@ -1,3 +1,22 @@
+# Upcoming release
+
+## Features
+
+
+## Bugfixes
+
+
+## Changes
+- Delay-load `shell32.dll`, `combase.dll` and `advapi32.dll` in Windows MSVC builds, so most runs no longer load them (and the DLLs they pull in) at startup, see #2217 (@azchohfi)
+
+## Other
+
+# 10.5.2
+
+## Bugfixes
+- Fix invalid syntax in zsh completions. See #2216
+- Write raw bytes instead of replacing them with U+FFFD when `--format` output goes to a pipe, so filenames that are not valid UTF-8 reach downstream tools unchanged; see #2189.
+
 # 10.5.1
 
 ## Bugfixes
